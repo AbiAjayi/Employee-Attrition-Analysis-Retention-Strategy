@@ -1,7 +1,7 @@
 # Employee-Attrition-Analysis-Retention-Strategy
 ## Table of Contents
-- [Project Overview](projectoverview)
-- [Objectives](objectives)
+- [Project Overview](#project-overview)
+- [Objectives](#objectives)
 - [Tools & Techniques](toolstechniques)
 - [Dataset Summary](datasetsummary)
 - [Dashboard Features](dashboardfeatures)
@@ -20,7 +20,7 @@ Why are employees leaving?
 Which groups are most at risk?
 
 What strategies can reduce attrition and improve retention?
-### Objectives
+## Objectives
 - Analyze workforce data using SQL for in-depth EDA
 - Identify factors driving employee attrition
 - Develop a Power BI dashboard to monitor attrition trends
