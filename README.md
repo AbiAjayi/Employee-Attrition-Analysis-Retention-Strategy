@@ -85,6 +85,22 @@ Marital Status:
 
 ## Sample SQL Queries
 ### Overall Attrition & Retention Rate
+### Business Recommendations
+- Strengthen Onboarding: Reduce early-tenure exits with structured programs
+- Career Development Plans: For employees in 1–5 year range
+- Engage Younger Workforce: Flexible policies, mentorship
+- Improve Work-Life Balance: Reduce mandatory overtime
+- Compensation Strategy: Offer stock options for retention
+- Department-Specific Interventions: Focus on Sales & R&D
+
+### Skills Demonstrated
+- SQL EDA: Joins, aggregations, CASE statements, KPI calculations
+
+- Power BI: Dashboard design, DAX for custom measures
+
+- Data Storytelling: Translating analysis into actionable insights
+
+- Stakeholder Collaboration: Working with HR to inform strategy
 
 
 
