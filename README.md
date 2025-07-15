@@ -2,14 +2,14 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Objectives](#objectives)
-- [Tools & Techniques](toolstechniques)
-- [Dataset Summary](datasetsummary)
-- [Dashboard Features](dashboardfeatures)
-- [Key Insights from SQL Analysis](keyinsightsfromsqlanalysis)
-- [Sample SQL Queries](samplesqlqueries)
-- [Business Recommendations](businessrecommendations)
-- [Skills Demonstrated](skillsdemonstrated)
-- [Dashboard Preview](dashboardpreview)
+- [Tools & Techniques](#tools--techniques)
+- [Dataset Summary](#dataset-summary)
+- [Dashboard Features](#dashboard-features)
+- [Key Insights from SQL Analysis](#key-insights-from-sql-analysis)
+- [Sample SQL Queries](#sample-sql-queries)
+- [Business Recommendations](#business-recommendations)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Dashboard Preview](#dashboard-preview)
 ## Project Overview
 I completed this project in a real-world business setting as part of an initiative to analyze employee attrition and develop an employee retention strategy. Over 4 weeks, I led the data analysis and dashboard development, collaborating with HR and leadership teams to provide actionable insights.
 
@@ -25,7 +25,7 @@ What strategies can reduce attrition and improve retention?
 - Identify factors driving employee attrition
 - Develop a Power BI dashboard to monitor attrition trends
 - Recommend data-driven retention strategies
-### Tools & Techniques
+## Tools & Techniques
 
 | Tools                   | Purpose                                |
 | ---------------------- | -------------------------------------- |
@@ -34,14 +34,14 @@ What strategies can reduce attrition and improve retention?
 | **DAX**                | Custom KPIs & calculations             |
 | **Excel**              | Minor data cleaning                    |
 
-### Dataset Summary
+## Dataset Summary
 Source: Internal HR database (anonymized for confidentiality)
 
 Records: 5,000+ employees
 
 Key Fields: Age, Gender, Department, Job Role, Job Level, Education, Satisfaction Scores, Monthly Income, Tenure, Attrition
 
-### Dashboard Features
+## Dashboard Features
 The Power BI dashboard provides:
 - Key KPIs: Attrition Rate, Retention Rate, Total Employees
 - Attrition Analysis by Department, Job Role, Job Level
@@ -51,7 +51,7 @@ The Power BI dashboard provides:
 - Overtime & Distance Impact
 - Compensation Analysis: Stock Options, Salary, Hike
 
-### Key Insights from SQL Analysis
+## Key Insights from SQL Analysis
 1.  Overall Workforce Metrics
    
 - Attrition Rate: 16%
@@ -155,7 +155,7 @@ CASE
 ``` 
 
 
-### Business Recommendations
+## Business Recommendations
 - Strengthen Onboarding: Reduce early-tenure exits with structured programs
 - Career Development Plans: For employees in 1–5 year range
 - Engage Younger Workforce: Flexible policies, mentorship
@@ -163,7 +163,7 @@ CASE
 - Compensation Strategy: Offer stock options for retention
 - Department-Specific Interventions: Focus on Sales & R&D
 
-### Skills Demonstrated
+## Skills Demonstrated
 - SQL EDA: Joins, aggregations, CASE statements, KPI calculations
 
 - Power BI: Dashboard design, DAX for custom measures
