@@ -85,6 +85,43 @@ Marital Status:
 
 ## Sample SQL Queries
 ### Overall Attrition & Retention Rate
+
+```sql
+SELECT 
+COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition = 0 THEN 0 END)*100/ COUNT(*) AS Retention_rate
+FROM dbo.Employee_data
+```
+### Attrition by Department 
+```sql
+SELECT Department,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
+FROM dbo.Employee_data
+GROUP BY Department;
+```
+### Attrition by Tenure
+```sql
+WITH CTE AS (
+SELECT *,
+CASE
+	WHEN YearsAtCompany < 1 THEN '<1'
+	WHEN YearsAtCompany BETWEEN 1 AND 5 THEN '1-5'
+	WHEN YearsAtCompany BETWEEN 6 AND 10 THEN '6-10'
+	WHEN YearsAtCompany BETWEEN 11 AND 15 THEN '11-15'
+	WHEN YearsAtCompany BETWEEN 16 AND 20 THEN '16-20'
+	WHEN YearsAtCompany BETWEEN 21 AND 25 THEN '21-25'
+	ELSE '>25'
+	END AS Tenure
+FROM dbo.Employee_data )
+SELECT Tenure, 
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
+FROM CTE 
+GROUP BY Tenure;
+```
+
+
 ### Business Recommendations
 - Strengthen Onboarding: Reduce early-tenure exits with structured programs
 - Career Development Plans: For employees in 1–5 year range
