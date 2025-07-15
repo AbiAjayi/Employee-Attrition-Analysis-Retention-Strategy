@@ -1,4 +1,15 @@
 # Employee-Attrition-Analysis-Retention-Strategy
+## Table of Contents
+- [Project Overview](projectoverview)
+- [Objectives](objectives)
+- [Tools & Techniques](toolstechniques)
+- [Dataset Summary](datasetsummary)
+- [Dashboard Features](dashboardfeatures)
+- [Key Insights from SQL Analysis](keyinsightsfromsqlanalysis)
+- [Sample SQL Queries](samplesqlqueries)
+- [Business Recommendations](businessrecommendations)
+- [Skills Demonstrated](skillsdemonstrated)
+- [Dashboard Preview](dashboardpreview)
 ## Project Overview
 I completed this project in a real-world business setting as part of an initiative to analyze employee attrition and develop an employee retention strategy. Over 4 weeks, I led the data analysis and dashboard development, collaborating with HR and leadership teams to provide actionable insights.
 
@@ -14,6 +25,7 @@ What strategies can reduce attrition and improve retention?
 - Identify factors driving employee attrition
 - Develop a Power BI dashboard to monitor attrition trends
 - Recommend data-driven retention strategies
+### Tools & Techniques
 
 | Tools                   | Purpose                                |
 | ---------------------- | -------------------------------------- |
