@@ -15,9 +15,77 @@ What strategies can reduce attrition and improve retention?
 - Develop a Power BI dashboard to monitor attrition trends
 - Recommend data-driven retention strategies
 
-| Tool                   | Purpose                                |
+| Tools                   | Purpose                                |
 | ---------------------- | -------------------------------------- |
 | **SQL Server (MYSQL)** | Data extraction & exploratory analysis |
 | **Power BI**           | Dashboard creation & visualization     |
 | **DAX**                | Custom KPIs & calculations             |
 | **Excel**              | Minor data cleaning                    |
+
+### Dataset Summary
+Source: Internal HR database (anonymized for confidentiality)
+
+Records: 5,000+ employees
+
+Key Fields: Age, Gender, Department, Job Role, Job Level, Education, Satisfaction Scores, Monthly Income, Tenure, Attrition
+
+### Dashboard Features
+The Power BI dashboard provides:
+- Key KPIs: Attrition Rate, Retention Rate, Total Employees
+- Attrition Analysis by Department, Job Role, Job Level
+- Demographic Insights: Age, Gender, Marital Status
+- Tenure-based Attrition & Career Progression
+- Engagement Metrics: Job Satisfaction, Environment Satisfaction, Manager Relationship
+- Overtime & Distance Impact
+- Compensation Analysis: Stock Options, Salary, Hike
+
+### Key Insights from SQL Analysis
+1.  Overall Workforce Metrics
+   
+- Attrition Rate: 16%
+
+- Retention Rate: 83%
+
+2. Department & Job Role
+- Sales and HR departments have the highest attrition rates (20% and 19%).
+
+- Sales Representatives face the highest attrition at 39%, followed by Lab Technicians (~23%).
+
+3. Tenure
+- Employees with <1 year tenure have the highest attrition rate.
+
+- 1–5 years tenure accounts for most exits (146 employees).
+
+4. Demographics
+Age:
+
+- 18–24 years: 39% attrition
+
+- 25–34 years: 20%
+
+Marital Status:
+
+- Single employees: 25% attrition
+
+5. Job Level & Compensation
+- Job Level 1: 26% attrition (entry-level risk)
+
+- No stock options: 24% attrition (highest)
+
+6. Engagement & Work Conditions
+- Low satisfaction correlates strongly with attrition:
+
+  - Environment Satisfaction = 1 → 25% attrition
+
+  - Job Satisfaction (low) → 22%
+
+- Overtime workers have 30% attrition
+
+- Distance 15–29 km correlates with higher attrition
+
+## Sample SQL Queries
+### Overall Attrition & Retention Rate
+
+
+
+
