@@ -2,6 +2,7 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Business Challenge](#business-challenge)
+- [My Role and Impact](#my-role-and-impact)
 - [Objectives](#objectives)
 - [Tools & Techniques](#tools--techniques)
 - [Dataset Summary](#dataset-summary)
@@ -64,48 +65,36 @@ The Power BI dashboard provides:
 - Compensation Analysis: Stock Options, Salary, Hike
 
 ## Key Insights from SQL Analysis
-1.  Overall Workforce Metrics
-   
-- Attrition Rate: 16%
+- Overall Attrition Rate: 16% (Retention Rate: 83%)
 
-- Retention Rate: 83%
+- By Department: Sales (20%) and HR (19%) had the highest attrition.
 
-2. Department & Job Role
-- Sales and HR departments have the highest attrition rates (20% and 19%).
+- By Role: Sales Representatives (39%) and Lab Technicians (23%) are most at risk.
 
-- Sales Representatives face the highest attrition at 39%, followed by Lab Technicians (~23%).
+- Tenure: Employees with <1 year tenure have the highest exit rate, but 1–5 years tenure accounts for most resignations.
 
-3. Tenure
-- Employees with <1 year tenure have the highest attrition rate.
+- Demographics:
 
-- 1–5 years tenure accounts for most exits (146 employees).
+   - Ages 18–24: 39% attrition (younger workforce at risk).
 
-4. Demographics
-Age:
+   - Single employees: 25% attrition.
 
-- 18–24 years: 39% attrition
+- Engagement Factors:
 
-- 25–34 years: 20%
+   - Low Job Satisfaction → 22% attrition.
 
-Marital Status:
+   - Low Relationship Satisfaction → 20%.
 
-- Single employees: 25% attrition
+- Work Conditions:
 
-5. Job Level & Compensation
-- Job Level 1: 26% attrition (entry-level risk)
+   - Overtime workers: 30% attrition.
 
-- No stock options: 24% attrition (highest)
+   - Employees living 15–29 km from work: higher attrition.
 
-6. Engagement & Work Conditions
-- Low satisfaction correlates strongly with attrition:
+- Compensation:
 
-  - Environment Satisfaction = 1 → 25% attrition
+   - Employees with no stock options had 24% attrition.
 
-  - Job Satisfaction (low) → 22%
-
-- Overtime workers have 30% attrition
-
-- Distance 15–29 km correlates with higher attrition
 
 
 ## Business Recommendations
