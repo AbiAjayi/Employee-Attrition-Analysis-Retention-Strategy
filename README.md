@@ -1,43 +1,55 @@
 # Employee-Attrition-Analysis-Retention-Strategy
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Business Challenge](#business-challenge)
 - [Objectives](#objectives)
 - [Tools & Techniques](#tools--techniques)
 - [Dataset Summary](#dataset-summary)
 - [Dashboard Features](#dashboard-features)
 - [Key Insights from SQL Analysis](#key-insights-from-sql-analysis)
-- [Sample SQL Queries](#sample-sql-queries)
 - [Business Recommendations](#business-recommendations)
 - [Skills Demonstrated](#skills-demonstrated)
-- [Dashboard Preview](#dashboard-preview)
+
 ## Project Overview
-I completed this project in a real-world business setting as part of an initiative to analyze employee attrition and develop an employee retention strategy. Over 4 weeks, I led the data analysis and dashboard development, collaborating with HR and leadership teams to provide actionable insights.
+This project was executed in a real-world setting to help the HR leadership team understand why employees were leaving and design strategies to reduce turnover. The analysis and dashboard provided actionable insights that influenced retention initiatives for high-risk departments.
 
-The goal was to answer:
+## Business Challenge
+The company faced increasing attrition, particularly among early-tenure employees and critical roles like Sales and Research & Development. HR needed clear answers:
 
-Why are employees leaving?
+- Why are employees leaving?
 
-Which groups are most at risk?
+- Which groups are at highest risk?
 
-What strategies can reduce attrition and improve retention?
+- What data-driven strategies can improve retention?
+
+- What strategies can reduce attrition and improve retention?
+
+## My Role and Impact
+- Led end-to-end data analysis for a workforce of 2,000+ employees using SQL.
+- Built an interactive Power BI dashboard for HR leadership to monitor attrition trends.
+- Delivered insights that informed targeted retention programs (onboarding improvements, flexible work policies, and compensation adjustments).
+- Enabled the business to identify 3 high-risk roles and prioritize actions, potentially reducing attrition by up to 10% in the next cycle.
+
 ## Objectives
-- Analyze workforce data using SQL for in-depth EDA
-- Identify factors driving employee attrition
-- Develop a Power BI dashboard to monitor attrition trends
-- Recommend data-driven retention strategies
+- Analyze workforce data to uncover key attrition drivers.
+
+- Identify high-risk groups (departments, job roles, demographics).
+
+- Provide data-backed retention strategies.
+
 ## Tools & Techniques
 
 | Tools                   | Purpose                                |
 | ---------------------- | -------------------------------------- |
 | **SQL Server (MYSQL)** | Data extraction & exploratory analysis |
 | **Power BI**           | Dashboard creation & visualization     |
-| **DAX**                | Custom KPIs & calculations             |
+| **DAX**                | Custom KPIs (Attrition Rate, Retention Rate) |
 | **Excel**              | Minor data cleaning                    |
 
 ## Dataset Summary
 Source: Internal HR database (anonymized for confidentiality)
 
-Records: 5,000+ employees
+Records: 2,000+ employees
 
 Key Fields: Age, Gender, Department, Job Role, Job Level, Education, Satisfaction Scores, Monthly Income, Tenure, Attrition
 
@@ -95,65 +107,6 @@ Marital Status:
 
 - Distance 15–29 km correlates with higher attrition
 
-## Sample SQL Queries
-### Overall Attrition & Retention Rate
-
-```sql
-SELECT 
-COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate,
-COUNT(CASE WHEN Attrition = 0 THEN 0 END)*100/ COUNT(*) AS Retention_rate
-FROM dbo.Employee_data
-```
-### Attrition by Department 
-```sql
-SELECT Department,
-COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
-COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
-FROM dbo.Employee_data
-GROUP BY Department;
-```
-### Attrition by Tenure
-```sql
-WITH CTE AS (
-SELECT *,
-CASE
-	WHEN YearsAtCompany < 1 THEN '<1'
-	WHEN YearsAtCompany BETWEEN 1 AND 5 THEN '1-5'
-	WHEN YearsAtCompany BETWEEN 6 AND 10 THEN '6-10'
-	WHEN YearsAtCompany BETWEEN 11 AND 15 THEN '11-15'
-	WHEN YearsAtCompany BETWEEN 16 AND 20 THEN '16-20'
-	WHEN YearsAtCompany BETWEEN 21 AND 25 THEN '21-25'
-	ELSE '>25'
-	END AS Tenure
-FROM dbo.Employee_data )
-SELECT Tenure, 
-COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
-COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
-FROM CTE 
-GROUP BY Tenure;
-```
-### Attrition by Age
-```sql
-SELECT
-  CASE
-    WHEN Age BETWEEN 18 AND 24 THEN '18–24'
-    WHEN Age BETWEEN 25 AND 34 THEN '25–34'
-    WHEN Age BETWEEN 35 AND 44 THEN '35–44'
-    WHEN Age BETWEEN 45 AND 54 THEN '45–54'
-    ELSE '55–60'
-  END AS AgeGroup,
-COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate
-FROM Employee_data
-GROUP BY 
-CASE
-    WHEN Age BETWEEN 18 AND 24 THEN '18–24'
-    WHEN Age BETWEEN 25 AND 34 THEN '25–34'
-    WHEN Age BETWEEN 35 AND 44 THEN '35–44'
-    WHEN Age BETWEEN 45 AND 54 THEN '45–54'
-    ELSE '55–60'
-  END;
-``` 
-
 
 ## Business Recommendations
 - Strengthen Onboarding: Reduce early-tenure exits with structured programs
@@ -170,9 +123,7 @@ CASE
 
 - Data Storytelling: Translating analysis into actionable insights
 
-- Stakeholder Collaboration: Working with HR to inform strategy
-
-## Dashboard Preview
+- Stakeholder Collaboration: Working with HR to inform strat
 
 
 
