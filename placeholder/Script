@@ -1,1 +1,220 @@
+USE Hr
+SELECT * 
+FROM dbo.Employee_data;
+--------------------------------------------------------------------------------------------------------------------------------
+/*Attrition Based Metrics*/
+/* Total number of people that left by each department */ 
+/* Reserach and development has the highest number of resignation of about 133 people, followed by Sales 92 and lastly HR with 12 employee*/
+
+SELECT Department, Attrition,
+COUNT(Attrition) AS Resigned          
+FROM dbo.Employee_data                
+WHERE Attrition = 1
+GROUP BY Department, Attrition;
+
+/* Attrition Rate*/
+/* Overall Attrition Rate is 16%  and Retention rate is 83% */
+SELECT 
+COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition = 0 THEN 0 END)*100/ COUNT(*) AS Retention_rate
+FROM dbo.Employee_data
+
+
+
+/* Attrition by Tenure */
+/*Employee that has spent less than a year has the highest Rate but this is based on the population in that group,however about 146 people resigned bewtween 1-5years  */
+WITH CTE AS (
+SELECT *,
+CASE
+	WHEN YearsAtCompany < 1 THEN '<1'
+	WHEN YearsAtCompany BETWEEN 1 AND 5 THEN '1-5'
+	WHEN YearsAtCompany BETWEEN 6 AND 10 THEN '6-10'
+	WHEN YearsAtCompany BETWEEN 11 AND 15 THEN '11-15'
+	WHEN YearsAtCompany BETWEEN 16 AND 20 THEN '16-20'
+	WHEN YearsAtCompany BETWEEN 21 AND 25 THEN '21-25'
+	ELSE '>25'
+	END AS Tenure
+FROM dbo.Employee_data )
+SELECT Tenure, 
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
+FROM CTE 
+GROUP BY Tenure;
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* Demographic Based Metrics*/
+/* Attrition by Age*/
+/*18-24 has 39% Rate followed by 25-34 20%, safe to say young employee has the highest Attrition rate*/
+SELECT
+  CASE
+    WHEN Age BETWEEN 18 AND 24 THEN '18–24'
+    WHEN Age BETWEEN 25 AND 34 THEN '25–34'
+    WHEN Age BETWEEN 35 AND 44 THEN '35–44'
+    WHEN Age BETWEEN 45 AND 54 THEN '45–54'
+    ELSE '55–60'
+  END AS AgeGroup,
+COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate
+FROM Employee_data
+GROUP BY 
+CASE
+    WHEN Age BETWEEN 18 AND 24 THEN '18–24'
+    WHEN Age BETWEEN 25 AND 34 THEN '25–34'
+    WHEN Age BETWEEN 35 AND 44 THEN '35–44'
+    WHEN Age BETWEEN 45 AND 54 THEN '45–54'
+    ELSE '55–60'
+  END;
+/* Attrition by Gender*/
+/*Male has higher attrition rate overall about 17%*/
+SELECT Gender,
+COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition = 1 THEN 1 END) AS Resigned
+FROM dbo.Employee_data
+GROUP BY Gender;
+
+
+/* Attrition by Marital Status*/
+/* Single has high attrition rate 25%*/
+SELECT MaritalStatus,
+COUNT(CASE WHEN Attrition = 1 THEN 1 END)*100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition = 1 THEN 1 END) AS Resigned
+FROM dbo.Employee_data
+GROUP BY MaritalStatus;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Job & Performance Metrics*/
+/*	Attrition by Job Role */ Sales representative 
+
+SELECT Jobrole,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY Jobrole
+ORDER BY COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) DESC;
+
+/*  Attrition by Department */
+
+SELECT Department,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
+FROM dbo.Employee_data
+GROUP BY Department;
+
+/*  Attrition by Performance Rating */
+
+SELECT PerformanceRating, 
+COUNT(PerformanceRating) AS Rating,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY PerformanceRating
+
+
+/*	Attrition by Job Level */
+
+SELECT Joblevel,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY JobLevel;
+
+/*  Attrition by Years in Current Role / Since Last Promotion */
+SELECT YearsInCurrentRole, YearsSinceLastPromotion,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY YearsInCurrentRole, YearsSinceLastPromotion;
+
+
+ SELECT MIn(YearsInCurrentRole), MAX(YearsInCurrentRole)
+ FROM dbo.Employee_data
+
+/*	Attrition vs. StockOptionLevel */
+
+SELECT StockOptionLevel,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) AS Resigned
+ FROM dbo.Employee_data
+ GROUP BY StockOptionLevel;
+
+/* Satisfaction & Engagement Metrics: Environment Satisfaction vs Attrition*/
+/* Environemtal satisfaction survey, the employee that gave 1 has the highest attrition rate of 25% */
+SELECT  
+EnvironmentSatisfaction,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY EnvironmentSatisfaction;
+
+/*	Job Satisfaction vs Attrition*/
+/* Also job satisfaction has something to do with Attrition rate, about 22% has low job satisfaction*/
+
+SELECT JobSatisfaction,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY JobSatisfaction;
+
+/*	Relationship Satisfaction with Manager*/
+/* High attrition rate of 20% for employee with low relationship satisfaction*/
+SELECT RelationshipSatisfaction,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY RelationshipSatisfaction
+;
+/*	Work-Life Balance Score*/
+/*High attrition rate 31% has low worklife balance */
+SELECT WorkLifeBalance,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY WorkLifeBalance
+
+/*	Job Involvement Score */
+SELECT JobInvolvement,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY JobInvolvement
+
+/*Compensation Metrics */
+
+/*	Monthly Income vs Attrition */
+SELECT WorkLifeBalance,AVG(MonthlyIncome),
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY WorkLifeBalance
+
+/*Training & Development*/
+/*	TrainingTimesLastYear vs Attrition */
+
+SELECT Trainingtimeslastyear,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY TrainingTimesLastYear
+
+/* Workload & Commute*/
+/*	OverTime vs Attrition*/
+/*People that work overtime has high attrition rate 30%*/
+
+SELECT OverTime,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.Employee_data
+GROUP BY OverTime
+
+/*DistanceFromHome*/
+
+SELECT MIN(DistancefromHome), MAX(DistancefromHome)
+FROM dbo.Employee_data
+
+SELECT 
+CASE 
+	WHEN DistancefromHome BETWEEN 1 AND 5 THEN '1-5'
+	WHEN DistancefromHome BETWEEN 6 AND 10 THEN '6-10'
+	WHEN DistancefromHome BETWEEN 11 AND 15 THEN '11-15'
+	WHEN DistancefromHome BETWEEN 16 AND 20 THEN '16-20'
+	ELSE '20-29'
+	END,
+COUNT(CASE WHEN Attrition=1 THEN 1 END) * 100/ COUNT(*) AS Attrition_rate
+FROM dbo.employee_data
+GROUP BY 
+CASE 
+	WHEN DistancefromHome BETWEEN 1 AND 5 THEN '1-5'
+	WHEN DistancefromHome BETWEEN 6 AND 10 THEN '6-10'
+	WHEN DistancefromHome BETWEEN 11 AND 15 THEN '11-15'
+	WHEN DistancefromHome BETWEEN 16 AND 20 THEN '16-20'
+	ELSE '20-29'
+	END;
 
