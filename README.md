@@ -7,7 +7,7 @@
 - [Tools & Techniques](#tools--techniques)
 - [Dataset Summary](#dataset-summary)
 - [Dashboard Features](#dashboard-features)
-- [Key Insights from SQL Analysis](#key-insights-from-sql-analysis)
+- [Key Insights](#key-insights)
 - [Business Recommendations](#business-recommendations)
 - [Skills Demonstrated](#skills-demonstrated)
 - [Dashboard Preview](#dashboard-preview)
@@ -102,9 +102,9 @@ The Power BI dashboard provides:
 - Compensation Strategy: Offer stock options and competitive pay for critical roles.
 - Department-Specific Actions:
 
-- Sales: Redesign incentive structure, improve work-life balance.
+     - Sales: Redesign incentive structure, improve work-life balance.
 
-- R&D: Invest in training and engagement programs for Lab Technicians & Scientists.
+     - R&D: Invest in training and engagement programs for Lab Technicians & Scientists.
 
 
 
