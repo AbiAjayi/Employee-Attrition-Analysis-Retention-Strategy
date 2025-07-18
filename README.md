@@ -64,7 +64,7 @@ The Power BI dashboard provides:
 - Overtime & Distance Impact
 - Compensation Analysis: Stock Options, Salary, Hike
 
-## Key Insights from SQL Analysis
+## Key Insights 
 - Overall
    - Attrition Rate: 16% | Retention Rate: 83%
 
