@@ -10,7 +10,7 @@
 - [Key Insights from SQL Analysis](#key-insights-from-sql-analysis)
 - [Business Recommendations](#business-recommendations)
 - [Skills Demonstrated](#skills-demonstrated)
-
+- [Dashboard Preview](#dashboard-preview)
 ## Project Overview
 This real-world project aimed to analyze employee attrition and provide actionable strategies to improve retention. Over 4 weeks, I worked closely with HR leadership to uncover the key drivers of turnover, build an interactive Power BI dashboard, and deliver insights that informed business decisions.
 
@@ -72,14 +72,14 @@ The Power BI dashboard provides:
 
    - Single employees face 25% attrition.
 
--Sales Department
+- Sales Department
    - Attrition Rate: 20.6% (highest among all departments)
 
    - Sales Representatives: ~40% attrition.
 
    - Younger employees and overtime workers most at risk.
 
--Research & Development
+- Research & Development
    - Attrition Rate: 13.8% (lower than Sales but critical roles affected)
 
    - High attrition in Laboratory Technicians and Research Scientists.
@@ -116,6 +116,10 @@ The Power BI dashboard provides:
 - Data Storytelling: Translating analysis into actionable insights
 
 - Stakeholder Collaboration: Working with HR to inform strategies
+
+## Dashboard Preview
+<img width="1167" height="656" alt="image" src="https://github.com/user-attachments/assets/b53fa74a-e8ab-4f03-9f36-5a933ca4751c" />
+
 
 
 
