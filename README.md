@@ -12,7 +12,7 @@
 - [Skills Demonstrated](#skills-demonstrated)
 
 ## Project Overview
-This project was executed in a real-world setting to help the HR leadership team understand why employees were leaving and design strategies to reduce turnover. The analysis and dashboard provided actionable insights that influenced retention initiatives for high-risk departments.
+This real-world project aimed to analyze employee attrition and provide actionable strategies to improve retention. Over 4 weeks, I worked closely with HR leadership to uncover the key drivers of turnover, build an interactive Power BI dashboard, and deliver insights that informed business decisions.
 
 ## Business Challenge
 The company faced increasing attrition, particularly among early-tenure employees and critical roles like Sales and Research & Development. HR needed clear answers:
@@ -65,45 +65,48 @@ The Power BI dashboard provides:
 - Compensation Analysis: Stock Options, Salary, Hike
 
 ## Key Insights from SQL Analysis
-- Overall Attrition Rate: 16% (Retention Rate: 83%)
+- Overall
+   - Attrition Rate: 16% | Retention Rate: 83%
 
-- By Department: Sales (20%) and HR (19%) had the highest attrition.
+   - High attrition among employees with <1 year tenure and those aged 18–24 (39%).
 
-- By Role: Sales Representatives (39%) and Lab Technicians (23%) are most at risk.
+   - Single employees face 25% attrition.
 
-- Tenure: Employees with <1 year tenure have the highest exit rate, but 1–5 years tenure accounts for most resignations.
+-Sales Department
+   - Attrition Rate: 20.6% (highest among all departments)
 
-- Demographics:
+   - Sales Representatives: ~40% attrition.
 
-   - Ages 18–24: 39% attrition (younger workforce at risk).
+   - Younger employees and overtime workers most at risk.
 
-   - Single employees: 25% attrition.
+-Research & Development
+   - Attrition Rate: 13.8% (lower than Sales but critical roles affected)
 
-- Engagement Factors:
+   - High attrition in Laboratory Technicians and Research Scientists.
 
-   - Low Job Satisfaction → 22% attrition.
+   - Engagement factors: Low relationship satisfaction (Level 1) and low job satisfaction strongly linked to exits.
 
-   - Low Relationship Satisfaction → 20%.
+- Other Key Drivers
+   - Overtime: Employees working overtime show 30% attrition.
 
-- Work Conditions:
+   - Distance: Employees living 15–29 km from office have higher attrition.
 
-   - Overtime workers: 30% attrition.
-
-   - Employees living 15–29 km from work: higher attrition.
-
-- Compensation:
-
-   - Employees with no stock options had 24% attrition.
-
+   - Compensation: Employees with no stock options → 24% attrition.
 
 
 ## Business Recommendations
-- Strengthen Onboarding: Reduce early-tenure exits with structured programs
-- Career Development Plans: For employees in 1–5 year range
-- Engage Younger Workforce: Flexible policies, mentorship
-- Improve Work-Life Balance: Reduce mandatory overtime
-- Compensation Strategy: Offer stock options for retention
-- Department-Specific Interventions: Focus on Sales & R&D
+- Strengthen Onboarding: Target employees with <1 year tenure to reduce early exits.
+- Career Development Plans: Especially for employees with 1–5 years tenure.
+- Engage Younger Workforce: Flexible policies, mentorship programs.
+- Address Overtime: Implement workload balancing and flexible schedules.
+- Compensation Strategy: Offer stock options and competitive pay for critical roles.
+- Department-Specific Actions:
+
+- Sales: Redesign incentive structure, improve work-life balance.
+
+- R&D: Invest in training and engagement programs for Lab Technicians & Scientists.
+
+
 
 ## Skills Demonstrated
 - SQL EDA: Joins, aggregations, CASE statements, KPI calculations
@@ -112,7 +115,7 @@ The Power BI dashboard provides:
 
 - Data Storytelling: Translating analysis into actionable insights
 
-- Stakeholder Collaboration: Working with HR to inform strat
+- Stakeholder Collaboration: Working with HR to inform strategies
 
 
 
